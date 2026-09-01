@@ -93,6 +93,22 @@ class BookInStock
     @price = price
   end
 
+  def isbn
+    return @isbn
+  end
+
+  def price
+    return @price
+  end
+
+  def isbn=newIsbn
+    @isbn = newIsbn
+  end
+
+  def price=newPrice
+    @price = newPrice
+  end
+
   def price_as_string()
     if @price.class == Float
       j = @price*10
