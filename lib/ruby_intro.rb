@@ -1,5 +1,5 @@
 # When done, submit this entire file to the autograder.
-
+require "set"
 # Part 1
 
 def sum(arr)
@@ -34,7 +34,14 @@ def max_2_sum(arr)
 end
 
 def sum_to_n?(arr, n)
-  # YOUR CODE HERE
+  set = Set.new
+  arr.each do |number|
+    if(set.include?(n-number))
+      return true
+    end
+    set.add(number)
+  end
+  return false
 end
 
 # Part 2
