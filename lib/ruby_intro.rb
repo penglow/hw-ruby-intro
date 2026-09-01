@@ -63,7 +63,19 @@ def starts_with_consonant?(s)
 end
 
 def binary_multiple_of_4?(s)
-  # YOUR CODE HERE
+  number = s.to_i
+  other = 0
+  if number%4 != 0 || s.match?(/[a-z]/i) || s== ""
+    return false
+  end
+  while number != 0
+    other = number%10
+    number = number/10
+    if !(other == 0|| other ==1)
+      return false
+    end
+  end
+  return true
 end
 
 # Part 3
