@@ -81,5 +81,29 @@ end
 # Part 3
 
 class BookInStock
-  # YOUR CODE HERE
+  def initialize(isbn, price)
+    if isbn == ""
+      raise ArgumentError 
+    end
+    if price<=0
+      raise ArgumentError
+    end
+
+    @isbn = isbn 
+    @price = price
+  end
+
+  def price_as_string()
+    if @price.class == Float
+      j = @price*10
+      if j.to_i == j
+        return "$"+@price.to_s+"0"
+      else
+        return "$"+@price.to_s
+      end
+    else
+      return "$"+@price.to_s+".00"
+    end
+  end
+
 end
