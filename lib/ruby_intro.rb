@@ -48,10 +48,18 @@ end
 
 def hello(name)
   # YOUR CODE HERE
+  return "Hello, " +name
 end
 
 def starts_with_consonant?(s)
-  # YOUR CODE HERE
+  vowels = %w[q w r t y p s d f g h j k l z x c v b n m ]
+  if s == ""
+    return false
+  end
+  if vowels.include?(s[0].downcase)
+    return true
+  end
+  return false
 end
 
 def binary_multiple_of_4?(s)
